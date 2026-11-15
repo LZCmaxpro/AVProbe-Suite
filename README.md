@@ -71,17 +71,7 @@ docs/FAQ.md          常见问题
 
 ## 下载
 
-**首选**：[Releases](../../releases) 页附件（含四个 APK 与校验值）
-
-备用直链：
-
-| 包 | 链接 |
-|---|---|
-| AVProbe v1.5.1 | https://aka.doubaocdn.com/s/zR1E81tf9J |
-| AVProbe ROOT v1.5.1 | https://aka.doubaocdn.com/s/wrQhAvSo3I |
-| AVProbeCamera v1.2.4 | https://aka.doubaocdn.com/s/cKvuVBMVvd |
-| AVProbeCamera ROOT v1.2.4 | https://aka.doubaocdn.com/s/erdBcaW3pQ |
-| 源码合集 | https://aka.doubaocdn.com/s/suTAHNx4ji |
+安装包统一从 [Releases](../../releases) 页获取，页内附四个 APK、文件校验值与源码说明。
 
 下载后请对照 [CHECKSUMS.txt](CHECKSUMS.txt) 核对 SHA256，不一致不要安装。
 
