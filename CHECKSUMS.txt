@@ -1,0 +1,27 @@
+AVProbe Suite 安装包校验值
+生成时间：2026-11-15
+
+AVProbe-v1.5.1.apk
+  大小：185212 字节
+  MD5：c5b3fbe008b8c4ec3b1b62bdb30241a6
+  SHA1：4b8f0de8e8d9a4bdc5e3f6b3d0e5d4c1a3b2c9f7
+  SHA256：（见发布页附件）
+  CRC32：D7E197EA
+
+AVProbe-ROOT-v1.5.1.apk
+  大小：193404 字节
+  MD5：d2ab7aed4b583ec01a02bb771000eee3
+  CRC32：E4F9D524
+
+AVProbeCamera-v1.2.4.apk
+  大小：189308 字节
+  MD5：a32e3218aefa71e88efb7209f6743c50
+  CRC32：70F3E803
+
+AVProbeCamera-ROOT-v1.2.4.apk
+  大小：189308 字节
+  MD5：4ea17bc81ee6a1fd38f731617714b9d4
+  CRC32：98D11BDC
+
+签名证书 SHA-256：
+85b48d6a51a9529e6fd40ec2df9b38f96dce30d5b4e9b984d093573946865669
