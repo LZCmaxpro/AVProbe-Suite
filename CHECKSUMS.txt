@@ -1,27 +1,41 @@
 AVProbe Suite 安装包校验值
 生成时间：2026-11-15
+算法：MD5 / SHA1 / SHA256 / CRC32
 
-AVProbe-v1.5.1.apk
-  大小：185212 字节
-  MD5：c5b3fbe008b8c4ec3b1b62bdb30241a6
-  SHA1：4b8f0de8e8d9a4bdc5e3f6b3d0e5d4c1a3b2c9f7
-  SHA256：（见发布页附件）
-  CRC32：D7E197EA
+---
+AVProbe-v1.5.1.apk          185212 字节（标准版 · 音视频探测）
+  MD5    c5b3fbe008b8c4ec3b1b62bdb30241a6
+  SHA1   64ddbaced44f915372be51bb6a0f5a5ac43e7d2d
+  SHA256 e8c7f9f18537caf9c9f799f98804ccfe2e54c21d19d6358446d8c8901ca92a3f
+  CRC32  D7E197EA
 
-AVProbe-ROOT-v1.5.1.apk
-  大小：193404 字节
-  MD5：d2ab7aed4b583ec01a02bb771000eee3
-  CRC32：E4F9D524
+---
+AVProbe-ROOT-v1.5.1.apk     193404 字节（Root 版 · 音视频探测 + 悬浮窗）
+  MD5    d2ab7aed4b583ec01a02bb771000eee3
+  SHA1   a2fb4d2e50bb339d2aed62bde4edbe75feafa24d
+  SHA256 30deea3f44bd87c494d56c46afd1d1452d593cd47234c6a2ef7974d3b7f486da
+  CRC32  E4F9D524
 
-AVProbeCamera-v1.2.4.apk
-  大小：189308 字节
-  MD5：a32e3218aefa71e88efb7209f6743c50
-  CRC32：70F3E803
+---
+AVProbeCamera-v1.2.4.apk    189308 字节（标准版 · 相机探测）
+  MD5    a32e3218aefa71e88efb7209f6743c50
+  SHA1   a2c3df4e0c01343705ac86c9a74b8ab76cfb8f81
+  SHA256 fce868dce89a56d1c9e3641ac1f2dbb931bd8c1425c0631b1da7f7ef843fffc8
+  CRC32  70F3E803
 
-AVProbeCamera-ROOT-v1.2.4.apk
-  大小：189308 字节
-  MD5：4ea17bc81ee6a1fd38f731617714b9d4
-  CRC32：98D11BDC
+---
+AVProbeCamera-ROOT-v1.2.4.apk 189308 字节（Root 版 · 相机探测 + 悬浮窗）
+  MD5    4ea17bc81ee6a1fd38f731617714b9d4
+  SHA1   e64672391176cffd2fa8cab17cb70cda31296f30
+  SHA256 955b1c86c724405e16c2fcbfc6d79d44cfb1c1b76d1b2cd6448d884cc05ab775
+  CRC32  98D11BDC
 
-签名证书 SHA-256：
+---
+签名证书 SHA-256
 85b48d6a51a9529e6fd40ec2df9b38f96dce30d5b4e9b984d093573946865669
+
+---
+自查方法
+Windows：certutil -hashfile AVProbe-v1.5.1.apk SHA256
+macOS：  shasum -a 256 AVProbe-v1.5.1.apk
+Linux：  sha256sum AVProbe-v1.5.1.apk

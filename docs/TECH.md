@@ -102,7 +102,7 @@ bg.setStroke(dp(1), 0x33FFFFFF);   // 描边
 圆形头像用 `ViewOutlineProvider` 裁切：
 
 ```java
-aavatar.setClipToOutline(true);
+avatar.setClipToOutline(true);
 avatar.setOutlineProvider(new ViewOutlineProvider() {
     public void getOutline(View v, Outline o) {
         int r = Math.min(v.getWidth(), v.getHeight()) / 2;
