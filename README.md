@@ -15,7 +15,7 @@ Android 上用于自查「设备到底支持什么」的两款小工具：音视
 
 ### AVProbe
 
-- **音频**：列出全部音频编码格式与声道能力，覆盖杜比全景声（EAC3-JOC）、DTS、AC3、EAC3、AAC、FLAC
+- **音频**：全部音频编码格式与声道能力，覆盖杜比全景声（EAC3-JOC）、DTS、AC3、EAC3、AAC、FLAC
 - **视频**：解码能力、HEVC 的 profile 与 level（区分 Main 8bit 与 Main10）、杜比视界、HDR10 / HLG
 - **屏幕**：`Display.getHdrCapabilities()` 返回的 HDR 类型、峰值亮度、色域
 - **实测**：直接播放测试文件，实时显示本次命中的解码器与 mime，附「已命中的」面板
@@ -43,8 +43,8 @@ Android 上用于自查「设备到底支持什么」的两款小工具：音视
 
 ## 使用
 
-1. 打开 AVProbe，「总览」页会逐项给出判定结论；「播放」页可直接选择文件实测。
-2. Root 版打开悬浮窗后，切到任意播放器播放杜比全景声内容，小窗会实时显示命中的组件与 mime。
+1. 打开 AVProbe，「总览」页逐项给出判定；「播放」页可选择文件实测。
+2. Root 版开悬浮窗后，切到任意播放器播放杜比全景声内容，小窗实时显示命中的组件与 mime。
 3. 打开 AVProbeCamera，「相机」页列出全部镜头；点「查看」进入取景页，画面广不广一眼可见。
 4. 首次启动会弹出免责声明，必须同意后才能进入，不同意即退出，这是有意设计。
 
@@ -54,7 +54,7 @@ Android 上用于自查「设备到底支持什么」的两款小工具：音视
 - 一套源码出双变体：构建期替换包名与 label，并用注释块标记删除 Root 专属权限
 - 判定采用「三层验证」：系统声明 → profile 是否覆盖 10bit → 真放文件 `configure` 成功
 - 相机能力不看 mime，看动态范围档位与厂商 tag；多摄要额外取物理镜头 id
-- 完整技术拆解见 [docs/TECH.md](docs/TECH.md)，常见问题见 [docs/FAQ.md](docs/FAQ.md)
+- 完整技术拆解见 [docs/TECH.md](docs/TECH.md)，文件职责见 [docs/SOURCE.md](docs/SOURCE.md)，常见问题见 [docs/FAQ.md](docs/FAQ.md)
 
 ## 仓库结构
 
@@ -65,14 +65,31 @@ CHECKSUMS.txt        四个安装包的 MD5 / SHA1 / SHA256 / CRC32
 CHANGELOG.md         版本记录
 docs/BUILD.md        手工构建完整步骤
 docs/TECH.md         技术实现拆解
+docs/SOURCE.md       源码文件职责与获取方式
 docs/FAQ.md          常见问题
 ```
 
-> 完整 Java 源码（各约 2.3k / 2.7k 行）与资源文件、构建脚本以源码压缩包形式提供，获取方式见「下载」一节。
+## 下载
+
+**首选**：[Releases](../../releases) 页附件（含四个 APK 与校验值）
+
+备用直链：
+
+| 包 | 链接 |
+|---|---|
+| AVProbe v1.5.1 | https://aka.doubaocdn.com/s/zR1E81tf9J |
+| AVProbe ROOT v1.5.1 | https://aka.doubaocdn.com/s/wrQhAvSo3I |
+| AVProbeCamera v1.2.4 | https://aka.doubaocdn.com/s/cKvuVBMVvd |
+| AVProbeCamera ROOT v1.2.4 | https://aka.doubaocdn.com/s/erdBcaW3pQ |
+| 源码合集 | https://aka.doubaocdn.com/s/suTAHNx4ji |
+
+下载后请对照 [CHECKSUMS.txt](CHECKSUMS.txt) 核对 SHA256，不一致不要安装。
+
+测试素材说明：仅自制样片与公开授权文件，不含影视片段。
 
 ## 关于 AI 参与
 
-这个项目的代码初版大量由 AI 生成，然后逐版在真机上验证、修改、回退。分工大致是：需求定义与取舍、真机验收由人完成；构建脚本由 AI 出模板后人工适配；UI 与探测逻辑由 AI 生成初版后人工修改；崩溃通过贴完整堆栈由 AI 定位根因（例如 `child already has a parent` 指向重复挂载的 View）。
+代码初版大量由 AI 生成，再逐版在真机上验证、修改、回退。分工大致是：需求定义与取舍、真机验收由人完成；构建脚本由 AI 出模板后人工适配；UI 与探测逻辑由 AI 生成初版后人工修改；崩溃通过贴完整堆栈由 AI 定位根因（例如 `child already has a parent` 指向重复挂载的 View）。
 
 AI 产物不直接发布：每个功能都要在真机上点通才算完成。
 
@@ -83,11 +100,8 @@ AI 产物不直接发布：每个功能都要在真机上点通才算完成。
 - Root 版监控只能说明「命中了哪个组件」，不能证明画质正确
 - 设备覆盖有限，异常情况请附机型与截图提 issue
 
-## 下载
+## 免责与许可
 
-- 安装包与校验值见 [Releases](../../releases) 与 [CHECKSUMS.txt](CHECKSUMS.txt)
-- 测试素材说明：仅自制样片与公开授权文件，不含影视片段
+使用前请阅读 [DISCLAIMER.md](DISCLAIMER.md)：检测结果仅供参考，不构成专业报告；Root 版风险自担；打赏为自愿赠与、款项不退。
 
-## 许可
-
-见 [LICENSE](LICENSE)：允许学习、编译、修改与分发，禁止二次打包售卖或上架应用商店。
+许可见 [LICENSE](LICENSE)：允许学习、编译、修改与分发，禁止二次打包售卖或上架商店。
